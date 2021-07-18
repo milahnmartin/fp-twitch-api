@@ -1,3 +1,3 @@
-from webscraper.esea import esea_get
-from webscraper.faceit import faceit_get
-from webscraper.hltv import hltv_get
+from webscraper.esea import *
+from webscraper.faceit import *
+from webscraper.hltv import *
