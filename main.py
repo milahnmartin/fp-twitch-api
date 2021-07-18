@@ -5,7 +5,7 @@ app = Flask(__name__)
 
 
 @app.route('/get/<string:user_name>/<string:server_name>/<string:category>')
-def request(user_name: str, server_name: str, category: str) -> str:
+def get(user_name: str, server_name: str, category: str) -> str:
     if server_name == 'faceit':
         return webscraper.faceit_get(user_name, category)
     elif server_name == 'esea':
