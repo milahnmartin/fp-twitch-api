@@ -30,7 +30,7 @@ class Faceit:
 
 
 
-    def get_player_stats(self):
+    def get_player_stats(self) -> dict:
         player_stats_request = requests.get(f'https://open.faceit.com/data/v4/players/{self.get_player_id()}/stats/{self.game_id}',headers=self.api_header)
         player_stats_json = player_stats_request.json()
         return player_stats_json
