@@ -17,10 +17,16 @@ class Faceit:
         
 
     def get_player_id(self) -> int:
-        player_id_request = requests.get(f"https://open.faceit.com/data/v4/players?nickname={self.pname}&game=CSGO",headers=self.api_header)
-        player_id_data = player_id_request.json()
-        player_id = player_id_data["player_id"]
-        return player_id
+        try:
+            player_id_request = requests.get(f"https://open.faceit.com/data/v4/players?nickname={self.pname}&game=CSGO",headers=self.api_header)
+            player_id_data = player_id_request.json()
+            player_id = player_id_data["player_id"]
+            return player_id
+        except KeyError:
+            print('Error Occured',self.pname,'doesnt exist')
+            return {'status':False}
+
+
 
 
     def get_player_data(self) -> dict:
