@@ -1,9 +1,6 @@
 import requests
-from requests import api
-from requests.api import head
 from webscraper.keys import my_api_key
 # import keys
-
 
 class Faceit:
 
@@ -42,7 +39,14 @@ class Faceit:
         return player_stats_json
 
 
+    def get_player_map_stats(self,pMap) -> dict:
+        player_data = self.get_player_stats()
+        segments_data = player_data['segments']
+        for i in segments_data:
+            if i['label'] == pMap:
+                return i
 
+        return {"error":"Map doesnt Exist"}
 
 
 
