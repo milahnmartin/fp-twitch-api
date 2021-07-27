@@ -74,3 +74,5 @@ typings/
 
 # FuseBox cache
 .fusebox/
+__pycache__/main.cpython-39.pyc
+webscraper/__pycache__/faceit.cpython-39.pyc
