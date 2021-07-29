@@ -8,10 +8,10 @@ app = Flask(__name__)
 def get(user_name: str, server_name: str,user_map:str = None) -> dict:
     server_name.lower()
     user_map.lower()
-    if server_name == 'faceit' and user_map == 'none':
+    if server_name == 'faceit' and user_map == 'none' or 'None':
         user_instance = webscraper.Faceit(user_name)
         return user_instance.get_player_stats()
-    elif server_name == 'faceit' and user_map != 'none':
+    elif server_name == 'faceit' and user_map != 'none' or 'None':
         user_map = "de_"+user_map
         map_instance = webscraper.Faceit(user_name)
         return  map_instance.get_player_map_stats(user_map)
