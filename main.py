@@ -17,9 +17,9 @@ def get(user_name: str, server_name: str,user_map:str) -> dict:
         map_instance = webscraper.Faceit(user_name)
         return  map_instance.get_player_map_stats(user_map)
     elif server_name == 'esea':
-        return webscraper.esea_get(user_name, category)
+        return webscraper.esea_get(user_name, user_map)
     elif server_name == 'hltv':
-        return webscraper.hltv_get(user_name, category)
+        return webscraper.hltv_get(user_name, user_map)
     else:
         return f'<h1>Following Server {server_name} is out of Service ...</h1>'
 
